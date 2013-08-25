@@ -1,4 +1,5 @@
 
+
 /**
  * Created with IntelliJ IDEA.
  * User: ryandao
@@ -22,10 +23,10 @@ public class MasterControl {
         // Pass to CircularShift to do shifting
 //        CircularShifts circularShifts = new CircularShifts(characters.getWords(), new ArrayList<String>(Arrays.asList(blacklist)));
         CircularShifts circularShifts = new CircularShifts(characters.getWords(), cli.getIgnoredWords());
-        circularShifts.getShifts();
-        // Pass to AlphabeticalShift to do ordering
-        //AlphabeticalShifts alphabeticalShifts = new AlphabeticalShifts(circularShifts.getShifts());
 
+        // Pass to AlphabeticalShift to do ordering
+        AlphabeticalShifts alphabeticalShifts = new AlphabeticalShifts(circularShifts.getShifts());
+        alphabeticalShifts.getOrderedShifts();
         // Display to output
     }
 }

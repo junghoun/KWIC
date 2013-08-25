@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 /**
  * Created with IntelliJ IDEA.
@@ -14,8 +16,14 @@ public class AlphabeticalShifts {
         this.shifts = shifts;
     }
 
-    public ArrayList <String[]> getOrderedShifts() {
-        ArrayList <String[]> result = new ArrayList<String[]>();
-        return result;
+    public ArrayList <ArrayList<String>> getOrderedShifts() {
+        Collections.sort(this.shifts, new Comparator<ArrayList<String>>() {
+          @Override
+          public int compare(ArrayList<String> s1, ArrayList<String> s2) {
+            return (s1.get(0).compareTo(s2.get(0)));
+          }
+        });
+
+        return this.shifts;
     }
 }
