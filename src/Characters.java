@@ -7,20 +7,22 @@
  */
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Characters {
-    String[] sentences;
+    ArrayList <String> sentences;
 
-    public Characters(String[] sentences) {
+    public Characters(ArrayList <String> sentences) {
         this.sentences = sentences;
     }
 
-    public ArrayList<String[]> getWords() {
-        ArrayList <String[]> result = new ArrayList <String[]>();
+    public ArrayList <ArrayList <String>> getWords() {
+        ArrayList <ArrayList <String>> result = new ArrayList <ArrayList<String>>();
 
         for (int i = 0; i < sentences.length; i ++) {
-            String sentence = sentences[i];
-            result.add(sentence.split(" "));
+            String sentence = sentences.get(i);
+            String[] splitTokens = sentence.split(" ");
+            result.add(new ArrayList <String> (Arrays.asList(splitTokens)));
         }
 
         return result;

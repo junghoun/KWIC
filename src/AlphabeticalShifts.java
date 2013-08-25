@@ -8,9 +8,9 @@ import java.util.ArrayList;
  * To change this template use File | Settings | File Templates.
  */
 public class AlphabeticalShifts {
-    ArrayList <String[]> shifts;
+    ArrayList <ArrayList <String>> shifts;
 
-    public AlphabeticalShifts(ArrayList <String[]> shifts) {
+    public AlphabeticalShifts(ArrayList <ArrayList <String>> shifts) {
         this.shifts = shifts;
     }
 
