@@ -19,18 +19,16 @@ public class CLI {
 	}
 
     public void readInput(){
-    	int choice = -1;    	
-    	while (choice != 4) {	   
+    	int choice = -1;
+    	while (choice != 3) {
     		printMainMenu();
-	        choice = readSelection();	        
+	        choice = readSelection();
 	        switch (choice) {
 	            case 1: enterTitle();
 	            		break;
 	            case 2: enterWordsToIgnore();
 	            		break;
-	            case 3: makeList();
-	            		break;
-	            case 4: goodbyeMessage();
+	            case 3: goodbyeMessage();
 	            		break;
 	            default: errorMessage();
 	            		break;
@@ -43,23 +41,22 @@ public class CLI {
     }
 
     public void goodbyeMessage(){
-    	System.out.println("See you again");
+    	System.out.println("Waiting for result...");
     }
 
     public void printMainMenu(){
     	System.out.println("Welcome to KWIC");
     	System.out.println("1. Add a new title");
     	System.out.println("2. Add a new word to ignore");
-    	System.out.println("3. Show the shorted list");
-    	System.out.println("4. Exit");
+    	System.out.println("3. Show result");
     	System.out.print("Please enter your choice: ");
     }
 
     public int readSelection(){
     	int selection = -1;
     	Scanner input = new Scanner(System.in);
-		selection = input.nextInt();
-		//System.out.println("input: "+selection);
+    	selection = input.nextInt();
+
     	return selection;
     }
 
@@ -68,19 +65,19 @@ public class CLI {
     	while(!title.equalsIgnoreCase("q")){
     		System.out.print("Please enter the new title (press q to go back): ");
         	Scanner input = new Scanner(System.in);
-        	title = input.nextLine();        	        	
+        	title = input.nextLine();
         	if (!title.equalsIgnoreCase("q")) addTitle(title);
-    	}    	
+    	}
     }
 
 	  public void enterWordsToIgnore(){
-		String word = "";
-		while (!word.equalsIgnoreCase("q")){
+  		String word = "";
+  		while (!word.equalsIgnoreCase("q")){
 	    	System.out.print("Please enter the new word to ignore (press q to go back): ");
 	    	Scanner input = new Scanner(System.in);
 	    	word = input.nextLine();
 	    	if (!word.equalsIgnoreCase("q")) addWordsToIgnore(word);
-		}
+  		}
     }
 
     public void addTitle(String title){
@@ -99,8 +96,14 @@ public class CLI {
     	return ignoredWords;
     }
 
-    public void makeList(){
-    	//Show the shorted list
-    }
+    public void displayOutput(ArrayList <ArrayList<String>> result){
+    	for (int i = 0; i < result.size(); i++) {
+    	  String title = "";
+    	  for (int j = 0; j < result.get(i).size(); j++) {
+    	    title += result.get(i).get(j) + " ";
+    	  }
 
+    	  System.out.println(title);
+    	}
+    }
 }
