@@ -5,24 +5,32 @@
  * Time: 2:59 PM
  * To change this template use File | Settings | File Templates.
  */
+
+import java.util.Scanner;
 public class CLI {
     // Read input
-<<<<<<< HEAD
     public void readInput(){
     	while (true) {
 	        printMainMenu();
-	        choice = readSelection();   //
+	        choice = readSelection(); 
 	        switch (choice) {
-	            case 0: exit();
-	            case 1: foo();
-	            case 2: bar();
-	            default: print("Wrong choice");
+	            case 1: addSentence();
+	            		break;
+	            case 2: addWordsToIgnore();
+	            		break;
+	            case 3: makeList();
+	            		break;
+	            default: print("Choice must be between 1 and 3");
+	            		break;
 	        }
 	    }
     }
 
-    public int readSelection(){
-    	public int selection;
+    public int readSelection(){    	
+    	int selection = -1;
+    	Scanner input = new Scanner(System.in);		
+		selection = input.nextInt();
     	return selection;
     }
+
 }
