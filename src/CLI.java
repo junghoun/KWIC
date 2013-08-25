@@ -19,10 +19,10 @@ public class CLI {
 	}
 
     public void readInput(){
-    	int choice = -1;
-    	while (choice != 4) {
-	        printMainMenu();
-	        choice = readSelection();
+    	int choice = -1;    	
+    	while (choice != 4) {	   
+    		printMainMenu();
+	        choice = readSelection();	        
 	        switch (choice) {
 	            case 1: enterTitle();
 	            		break;
@@ -59,21 +59,28 @@ public class CLI {
     	int selection = -1;
     	Scanner input = new Scanner(System.in);
 		selection = input.nextInt();
+		//System.out.println("input: "+selection);
     	return selection;
     }
 
     public void enterTitle(){
-    	System.out.print("Please enter the new title: ");
-    	Scanner input = new Scanner(System.in);
-    	String title = input.nextLine();
-    	addTitle(title);
+    	String title = "";
+    	while(!title.equalsIgnoreCase("q")){
+    		System.out.print("Please enter the new title (press q to go back): ");
+        	Scanner input = new Scanner(System.in);
+        	title = input.nextLine();        	        	
+        	addTitle(title);
+    	}    	
     }
 
 	  public void enterWordsToIgnore(){
-    	System.out.print("Please enter the new word to ignore: ");
-    	Scanner input = new Scanner(System.in);
-    	String word = input.nextLine();
-    	addWordsToIgnore(word);
+		String word = "";
+		while (!word.equalsIgnoreCase("q")){
+	    	System.out.print("Please enter the new word to ignore (press q to go back): ");
+	    	Scanner input = new Scanner(System.in);
+	    	word = input.nextLine();
+	    	addWordsToIgnore(word);
+		}
     }
 
     public void addTitle(String title){
