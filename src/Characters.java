@@ -16,6 +16,13 @@ public class Characters {
         this.sentences = sentences;
     }
 
+    /**
+     * Split the array of setences into a 2-D array of words.
+     * For example: ["The Day after Tomorrow", "Fast and Furious"] will become
+     * [["The", "Day", "after", "Tomorrow"], ["Fast", "and", "Furious"]].
+     *
+     * @return a 2-D array of words.
+     */
     public ArrayList <ArrayList <String>> getWords() {
         ArrayList <ArrayList <String>> result = new ArrayList <ArrayList<String>>();
 
