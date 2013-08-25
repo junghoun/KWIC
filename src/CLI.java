@@ -69,7 +69,7 @@ public class CLI {
     		System.out.print("Please enter the new title (press q to go back): ");
         	Scanner input = new Scanner(System.in);
         	title = input.nextLine();        	        	
-        	addTitle(title);
+        	if (!title.equalsIgnoreCase("q")) addTitle(title);
     	}    	
     }
 
@@ -79,7 +79,7 @@ public class CLI {
 	    	System.out.print("Please enter the new word to ignore (press q to go back): ");
 	    	Scanner input = new Scanner(System.in);
 	    	word = input.nextLine();
-	    	addWordsToIgnore(word);
+	    	if (!word.equalsIgnoreCase("q")) addWordsToIgnore(word);
 		}
     }
 
