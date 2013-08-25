@@ -12,6 +12,7 @@ public class CLI {
     }
 
     public String[] getSentences() {
-
+        String[] result = new String[100];
+        return result;
     }
 }

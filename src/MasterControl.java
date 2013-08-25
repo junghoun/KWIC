@@ -8,11 +8,18 @@
 public class MasterControl {
     public static void main(String[] args) {
         // Read input
+        CLI cli = new CLI();
+        cli.readInput();
 
         // Pass to Characters to process input
+        Characters characters = new Characters(cli.getSentences());
 
         // Pass to CircularShift to do shifting
+        CircularShifts circularShifts = new CircularShifts(characters.getWords());
 
         // Pass to AlphabeticalShift to do ordering
+        AlphabeticalShifts alphabeticalShifts = new AlphabeticalShifts(circularShifts.getShifts());
+
+        // Display to output
     }
 }
