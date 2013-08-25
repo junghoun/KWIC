@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0e891a19-5597-4263-9542-f7dafcea0e95" name="Default" comment="" />
+    <list default="true" id="0e891a19-5597-4263-9542-f7dafcea0e95" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CLI.java" afterPath="$PROJECT_DIR$/src/CLI.java" />
+    </list>
     <ignored path="KWIC.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="0e891a19-5597-4263-9542-f7dafcea0e95" time="1377413698279" ignored="false" />
     <file path="/MasterControl.java" changelist="0e891a19-5597-4263-9542-f7dafcea0e95" time="1377413962079" ignored="false" />
-    <file path="/CLI.java" changelist="0e891a19-5597-4263-9542-f7dafcea0e95" time="1377413992309" ignored="false" />
+    <file path="/CLI.java" changelist="0e891a19-5597-4263-9542-f7dafcea0e95" time="1377414362020" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,10 +78,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CLI.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="CLI.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CLI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="17" selection-start="191" selection-end="191" vertical-scroll-proportion="0.0">
+            <state line="14" column="8" selection-start="267" selection-end="267" vertical-scroll-proportion="0.3343949">
               <folding />
             </state>
           </provider>
@@ -103,10 +105,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AlphabeticalShifts.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="AlphabeticalShifts.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AlphabeticalShifts.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="34" selection-start="51" selection-end="51" vertical-scroll-proportion="0.0477707">
+            <state line="9" column="38" selection-start="191" selection-end="191" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -405,20 +407,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/MasterControl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="51" selection-start="400" selection-end="400" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CLI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="17" selection-start="191" selection-end="191" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Characters.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="23" selection-start="178" selection-end="178" vertical-scroll-proportion="0.0">
@@ -435,7 +423,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AlphabeticalShifts.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="34" selection-start="51" selection-end="51" vertical-scroll-proportion="0.0477707">
+        <state line="9" column="38" selection-start="191" selection-end="191" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MasterControl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="51" selection-start="400" selection-end="400" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/CLI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="8" selection-start="267" selection-end="267" vertical-scroll-proportion="0.3343949">
           <folding />
         </state>
       </provider>

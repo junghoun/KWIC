@@ -7,6 +7,7 @@
  */
 public class CLI {
     // Read input
+<<<<<<< HEAD
     public void readInput(){
     	while (true) {
 	        printMainMenu();
