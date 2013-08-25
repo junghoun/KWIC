@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 
 /**
  * Created with IntelliJ IDEA.
@@ -14,16 +13,15 @@ public class MasterControl {
         cli.readInput();
 
 //        String[] test = {"The Day after Tomorrow", "Fast and Furious"};
-
+//        String[] blacklist = {"after", "and"};
         // Pass to Characters to process input
         Characters characters = new Characters(cli.getTitles());
 
 //        Characters characters = new Characters(new ArrayList<String>(Arrays.asList(test)));
-        ArrayList <ArrayList <String>> words = characters.getWords();
 
         // Pass to CircularShift to do shifting
-        //CircularShifts circularShifts = new CircularShifts(characters.getWords());
-        CircularShifts circularShifts = new CircularShifts(words);
+//        CircularShifts circularShifts = new CircularShifts(characters.getWords(), new ArrayList<String>(Arrays.asList(blacklist)));
+        CircularShifts circularShifts = new CircularShifts(characters.getWords(), cli.getIgnoredWords());
         circularShifts.getShifts();
         // Pass to AlphabeticalShift to do ordering
         //AlphabeticalShifts alphabeticalShifts = new AlphabeticalShifts(circularShifts.getShifts());

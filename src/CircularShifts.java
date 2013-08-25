@@ -10,9 +10,11 @@ import java.util.Collections;
  */
 public class CircularShifts {
     ArrayList <ArrayList <String>> words;
+    ArrayList <String> blacklist;
 
-    public CircularShifts(ArrayList <ArrayList <String>> words) {
+    public CircularShifts(ArrayList <ArrayList <String>> words, ArrayList <String> blacklist) {
         this.words = words;
+        this.blacklist = blacklist;
     }
 
     public ArrayList <ArrayList<String>> getShifts() {
@@ -27,12 +29,23 @@ public class CircularShifts {
               Collections.rotate(clone, -1);
 
               // Check if the first word is not a blacklisted word
-
-              result.add(clone);
+              if (! this.isBlackListed(clone.get(0))) {
+                result.add(clone);
+              }
               sentence = clone;
-            }
+          }
         }
 
         return result;
+    }
+
+    public boolean isBlackListed(String word) {
+      for (int i = 0; i < this.blacklist.size(); i++) {
+        if (this.blacklist.get(i).toLowerCase().equals(word)) {
+          return true;
+        }
+      }
+
+      return false;
     }
 }
