@@ -7,4 +7,11 @@
  */
 public class CLI {
     // Read input
+    public void readInput() {
+
+    }
+
+    public String[] getSentences() {
+
+    }
 }
