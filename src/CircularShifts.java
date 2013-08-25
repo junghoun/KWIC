@@ -19,12 +19,18 @@ public class CircularShifts {
         ArrayList <ArrayList<String>> result = new ArrayList <ArrayList<String>>();
 
         for (int i = 0; i < this.words.size(); i ++) {
-            ArrayList <String> clone = new ArrayList<String>(this.words.get(i));
-            Collections.rotate(clone, -1);
+          ArrayList <String> sentence = this.words.get(i);
+          result.add(sentence);
 
-            // Check if the first word is not a blacklisted word
+          for (int j = 1; j < sentence.size(); j ++) {
+              ArrayList <String> clone = new ArrayList<String>(sentence);
+              Collections.rotate(clone, -1);
 
-            result.add(clone);
+              // Check if the first word is not a blacklisted word
+
+              result.add(clone);
+              sentence = clone;
+            }
         }
 
         return result;

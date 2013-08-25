@@ -26,7 +26,7 @@ public class Characters {
     public ArrayList <ArrayList <String>> getWords() {
         ArrayList <ArrayList <String>> result = new ArrayList <ArrayList<String>>();
 
-        for (int i = 0; i < sentences.length; i ++) {
+        for (int i = 0; i < sentences.size(); i ++) {
             String sentence = sentences.get(i);
             String[] splitTokens = sentence.split(" ");
             result.add(new ArrayList <String> (Arrays.asList(splitTokens)));

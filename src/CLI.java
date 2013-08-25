@@ -9,11 +9,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 public class CLI {
-    
-	public void main(String[] args){
-		readInput();
-	}
-	
+
 	private ArrayList<String> titles;
 	private ArrayList<String> ignoredWords;
 
@@ -25,7 +21,7 @@ public class CLI {
     public void readInput(){
     	int choice = -1;
     	while (choice != 4) {
-	        printMainMenu();	        
+	        printMainMenu();
 	        choice = readSelection();
 	        switch (choice) {
 	            case 1: enterTitle();
@@ -49,7 +45,7 @@ public class CLI {
     public void goodbyeMessage(){
     	System.out.println("See you again");
     }
-    
+
     public void printMainMenu(){
     	System.out.println("Welcome to KWIC");
     	System.out.println("1. Add a new title");
@@ -58,10 +54,10 @@ public class CLI {
     	System.out.println("4. Exit");
     	System.out.print("Please enter your choice: ");
     }
-    
-    public int readSelection(){    	
+
+    public int readSelection(){
     	int selection = -1;
-    	Scanner input = new Scanner(System.in);		
+    	Scanner input = new Scanner(System.in);
 		selection = input.nextInt();
     	return selection;
     }
@@ -69,16 +65,16 @@ public class CLI {
     public void enterTitle(){
     	System.out.print("Please enter the new title: ");
     	Scanner input = new Scanner(System.in);
-    	String title = input.nextLine();    	
-    	addTitle(title);    	
+    	String title = input.nextLine();
+    	addTitle(title);
     }
 
-	public void enterWordsToIgnore(){
+	  public void enterWordsToIgnore(){
     	System.out.print("Please enter the new word to ignore: ");
     	Scanner input = new Scanner(System.in);
-    	String word = input.nextLine();    	
+    	String word = input.nextLine();
     	addWordsToIgnore(word);
-    }    
+    }
 
     public void addTitle(String title){
     	titles.add(title);
@@ -99,20 +95,5 @@ public class CLI {
     public void makeList(){
     	//Show the shorted list
     }
-    
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
