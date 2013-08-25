@@ -7,4 +7,21 @@
  */
 public class CLI {
     // Read input
+    public void readInput(){
+    	while (true) {
+	        printMainMenu();
+	        choice = readSelection();   //
+	        switch (choice) {
+	            case 0: exit();
+	            case 1: foo();
+	            case 2: bar();
+	            default: print("Wrong choice");
+	        }
+	    }
+    }
+
+    public int readSelection(){
+    	public int selection;
+    	return selection;
+    }
 }
