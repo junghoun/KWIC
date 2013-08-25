@@ -67,11 +67,11 @@ public class CLI {
     	ignoredWords.add(word);
     }
 
-    public void getTitles(){
+    public ArrayList<String> getTitles(){
     	return titles;
     }
 
-    public void getIgnoredWords(){
+    public ArrayList<String> getIgnoredWords(){
     	return ignoredWords;
     }
 
