@@ -22,7 +22,9 @@ public class CircularShifts {
 
     for (int i = 0; i < this.words.size(); i ++) {
       ArrayList <String> sentence = this.words.get(i);
-      result.add(sentence);
+      if ( ! this.isBlackListed(sentence.get(0))) {
+        result.add(sentence) ;
+      }
 
       for (int j = 1; j < sentence.size(); j ++) {
         ArrayList <String> clone = new ArrayList<String>(sentence);
