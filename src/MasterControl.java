@@ -7,22 +7,20 @@
  */
 public class MasterControl {
   public static void main(String[] args) {
-    // Read input
+    // Initialization
+    LineStorage lineStorage = new LineStorage();
     CLI cli = new CLI();
 
     // Set up input listeners
-    Input input = new Input();
+    Input input = new Input(lineStorage);
     cli.addLineAddedListener(input);
     cli.addIgnoredWordListener(input);
 
     // Start the UI
     cli.start();
 
-    // Pass to Characters to process input
-    Characters characters = new Characters(input.getTitles());
-
     // Pass to CircularShift to do shifting
-    CircularShifts circularShifts = new CircularShifts(characters.getWords(), input.getIgnoredWords());
+    CircularShifts circularShifts = new CircularShifts(lineStorage.getWords(), input.getIgnoredWords());
 
     // Pass to AlphabeticalShift to do ordering
     AlphabeticalShifts alphabeticalShifts = new AlphabeticalShifts(circularShifts.getShifts());

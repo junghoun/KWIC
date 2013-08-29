@@ -2,39 +2,29 @@ import java.util.ArrayList;
 
 
 public class Input implements LineAddedListener, IgnoredWordAddedListener {
-  private ArrayList<String> titles;
+  private LineStorage lineStorage;
   private ArrayList<String> ignoredWords;
 
-  public Input() {
-    titles = new ArrayList<String>();
+  public Input(LineStorage lineStorage) {
+    this.lineStorage = lineStorage;
     ignoredWords = new ArrayList<String>();
   }
 
   @Override
   public void handleLineAddedEvent(String line) {
-    addTitle(line);
+    lineStorage.addLine(line);
   }
 
   @Override
   public void handleIgnoreWordAddedEvent(String word) {
-    addWordsToIgnore(word);
-  }
-
-  public void addTitle(String title){
-    titles.add(title);
-  }
-
-  public void addWordsToIgnore(String word){
-    ignoredWords.add(word);
-  }
-
-  public ArrayList<String> getTitles(){
-    return titles;
+    this.addWordsToIgnore(word);
   }
 
   public ArrayList<String> getIgnoredWords(){
     return ignoredWords;
   }
 
-
+  private void addWordsToIgnore(String word){
+    ignoredWords.add(word);
+  }
 }
