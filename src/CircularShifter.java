@@ -8,11 +8,11 @@ import java.util.Collections;
  * Time: 3:00 PM
  * To change this template use File | Settings | File Templates.
  */
-public class CircularShifts {
+public class CircularShifter {
   ArrayList <ArrayList <String>> words;
   ArrayList <String> blacklist;
 
-  public CircularShifts(ArrayList <ArrayList <String>> words, ArrayList <String> blacklist) {
+  public CircularShifter(ArrayList <ArrayList <String>> words, ArrayList <String> blacklist) {
     this.words = words;
     this.blacklist = blacklist;
   }
