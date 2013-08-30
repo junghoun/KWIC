@@ -1,10 +1,4 @@
-/**
- * Created with IntelliJ IDEA.
- * User: ryandao
- * Date: 8/25/13
- * Time: 2:55 PM
- * To change this template use File | Settings | File Templates.
- */
+
 public class MasterControl {
   public static void main(String[] args) {
     // Initialization
@@ -20,12 +14,12 @@ public class MasterControl {
     cli.start();
 
     // Pass to CircularShifter to do shifting
-    CircularShifter circularShifts = new CircularShifter(lineStorage, input.getIgnoredWords());
+    CircularShifter circularShifter = new CircularShifter(lineStorage, input.getIgnoredWords());
 
     // Pass to AlphabeticalShift to do ordering
-    AlphabeticalShifts alphabeticalShifts = new AlphabeticalShifts(circularShifts.getShifts());
+    Alphabetizer alphabetizer = new Alphabetizer(circularShifter);
 
     // Display to output
-    cli.displayOutput(alphabeticalShifts.getOrderedShifts());
+    cli.displayOutput(alphabetizer.getOrderedShifts());
   }
 }
