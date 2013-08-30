@@ -9,36 +9,55 @@ import java.util.Collections;
  * To change this template use File | Settings | File Templates.
  */
 public class CircularShifter {
-  ArrayList <ArrayList <String>> words;
-  ArrayList <String> blacklist;
+  private LineStorage lineStorage;
+  private ArrayList<String> blacklist;
+  private ArrayList<ArrayList<String>> shifts;
 
-  public CircularShifter(ArrayList <ArrayList <String>> words, ArrayList <String> blacklist) {
-    this.words = words;
+  public CircularShifter(LineStorage lineStorage, ArrayList <String> blacklist) {
+    this.lineStorage = lineStorage;
     this.blacklist = blacklist;
+    this.shifts = this.shiftsForLines(lineStorage.getWords());
   }
 
-  public ArrayList <ArrayList<String>> getShifts() {
-    ArrayList <ArrayList<String>> result = new ArrayList <ArrayList<String>>();
+  public ArrayList<ArrayList<String>> getShifts() {
+    return this.shifts;
+  }
 
-    for (int i = 0; i < this.words.size(); i ++) {
-      ArrayList <String> sentence = this.words.get(i);
-      if ( ! this.isBlackListed(sentence.get(0))) {
-        result.add(sentence) ;
+  private ArrayList<ArrayList<String>> shiftsForLine(ArrayList<String> words) {
+    ArrayList<ArrayList<String>> result = new ArrayList<ArrayList<String>>();
+
+    // Add the original line if it's not blacklisted
+    if ( ! this.isBlackListed(words.get(0))) {
+      result.add(words) ;
+    }
+
+    for (int j = 1; j < words.size(); j ++) {
+      // Shifting
+      ArrayList <String> clone = new ArrayList<String>(words);
+      Collections.rotate(clone, -1);
+
+      // Add the shift if it's not blacklisted
+      if (! this.isBlackListed(clone.get(0))) {
+        result.add(clone);
       }
 
-      for (int j = 1; j < sentence.size(); j ++) {
-        ArrayList <String> clone = new ArrayList<String>(sentence);
-        Collections.rotate(clone, -1);
-
-        // Check if the first word is not a blacklisted word
-        if (! this.isBlackListed(clone.get(0))) {
-          result.add(clone);
-        }
-        sentence = clone;
-      }
+      words = clone;
     }
 
     this.caseProcessing(result);
+    return result;
+  }
+
+  private ArrayList<ArrayList<String>> shiftsForLines(ArrayList<ArrayList<String>> lines) {
+    ArrayList<ArrayList<String>> result = new ArrayList<ArrayList<String>>();
+
+    for (int i = 0; i < lines.size(); i ++) {
+      ArrayList<String> words = lines.get(i);
+      for (ArrayList<String> shift : this.shiftsForLine(words)) {
+        result.add(shift);
+      }
+    }
+
     return result;
   }
 
