@@ -27,7 +27,7 @@ public class CircularShifter {
     ArrayList<String> result = new ArrayList<String>();
 
     for (int i = 0; i < this.getSize(); i ++) {
-      result.add(this.getShift(i).get(0));
+      result.add(getShift(i).get(0));
     }
 
     return result;
@@ -40,11 +40,11 @@ public class CircularShifter {
    * @return ArrayList<String> representation of the desired shift
    */
   public ArrayList<String> getShift(int position) {
-    return this.shifts.get(position);
+    return shifts.get(position);
   }
 
   public int getSize() {
-    return this.shifts.size();
+    return shifts.size();
   }
 
   /**
@@ -58,7 +58,7 @@ public class CircularShifter {
     ArrayList<ArrayList<String>> result = new ArrayList<ArrayList<String>>();
 
     // Add the original line if it's not blacklisted
-    if ( ! this.isBlackListed(words.get(0))) {
+    if ( ! isBlackListed(words.get(0))) {
       result.add(words) ;
     }
 
@@ -68,14 +68,14 @@ public class CircularShifter {
       Collections.rotate(clone, -1);
 
       // Add the shift if it's not blacklisted
-      if (! this.isBlackListed(clone.get(0))) {
+      if (! isBlackListed(clone.get(0))) {
         result.add(clone);
       }
 
       words = clone;
     }
 
-    this.caseProcessing(result);
+    caseProcessing(result);
     return result;
   }
 
@@ -90,7 +90,7 @@ public class CircularShifter {
 
     for (int i = 0; i < lines.size(); i ++) {
       ArrayList<String> words = lines.get(i);
-      for (ArrayList<String> shift : this.shiftsForLine(words)) {
+      for (ArrayList<String> shift : shiftsForLine(words)) {
         result.add(shift);
       }
     }
@@ -109,7 +109,7 @@ public class CircularShifter {
     for (int i = 0; i < words.size(); i++) {
       for (int j = 0; j < words.get(i).size(); j ++) {
         String word = words.get(i).get(j);
-        if (this.isBlackListed(word)) {
+        if (isBlackListed(word)) {
           // Convert blacklisted word to lowercase
           String lowerCase = word.toLowerCase();
           words.get(i).set(j, lowerCase);
@@ -130,7 +130,7 @@ public class CircularShifter {
    */
   private boolean isBlackListed(String word) {
     for (int i = 0; i < this.blacklist.size(); i++) {
-      if (this.blacklist.get(i).toLowerCase().equals(word)) {
+      if (blacklist.get(i).toLowerCase().equals(word)) {
         return true;
       }
     }

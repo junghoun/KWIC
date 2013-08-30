@@ -10,12 +10,10 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CLI {
-  private ArrayList<LineAddedListener> lineAddedListeners;
-  private ArrayList<IgnoredWordAddedListener> ignoredWordAddedListeners;
+  private ArrayList<InputListener> inputListeners;
 
   public CLI() {
-    this.lineAddedListeners = new ArrayList<LineAddedListener>();
-    this.ignoredWordAddedListeners = new ArrayList<IgnoredWordAddedListener>();
+    this.inputListeners = new ArrayList<InputListener>();
   }
 
   public void start(){
@@ -42,6 +40,7 @@ public class CLI {
 
   public void showResult(){
   	System.out.println("Waiting for result...");
+  	this.notifyInputFinished();
   }
 
   public void printMainMenu(){
@@ -95,23 +94,25 @@ public class CLI {
   	}
   }
 
-  public void addLineAddedListener(LineAddedListener listener) {
-    this.lineAddedListeners.add(listener);
-  }
-
-  public void addIgnoredWordListener(IgnoredWordAddedListener listener) {
-    this.ignoredWordAddedListeners.add(listener);
+  public void addInputListener(InputListener listener) {
+    this.inputListeners.add(listener);
   }
 
   private void notifyLineAdded(String line) {
-    for (LineAddedListener listener : this.lineAddedListeners) {
+    for (InputListener listener : this.inputListeners) {
       listener.handleLineAddedEvent(line);
     }
   }
 
   private void notifyIgnoredWordAdded(String word) {
-    for (IgnoredWordAddedListener listener : this.ignoredWordAddedListeners) {
+    for (InputListener listener : this.inputListeners) {
       listener.handleIgnoreWordAddedEvent(word);
+    }
+  }
+
+  private void notifyInputFinished() {
+    for (InputListener listener : this.inputListeners) {
+      listener.handleInputFinishedEvent();
     }
   }
 }

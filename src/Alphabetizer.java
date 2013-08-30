@@ -19,14 +19,14 @@ public class Alphabetizer {
   }
 
   public Integer[] getOrderedIndices() {
-    return this.orderedIndices;
+    return orderedIndices;
   }
 
   public ArrayList<ArrayList<String>> getOrderedShifts() {
     ArrayList<ArrayList<String>> result = new ArrayList<ArrayList<String>>();
 
-    for (Integer i : this.orderedIndices) {
-      result.add(this.circularShifter.getShift(i));
+    for (Integer i : orderedIndices) {
+      result.add(circularShifter.getShift(i));
     }
 
     return result;

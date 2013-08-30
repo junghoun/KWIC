@@ -28,8 +28,8 @@ public class LineStorage {
   }
 
   public void addLine(String line) {
-    this.lines.add(line);
-    this.words.add(this.splitLine(line));
+    lines.add(line);
+    words.add(this.splitLine(line));
   }
 
   /**
@@ -43,7 +43,7 @@ public class LineStorage {
     ArrayList <ArrayList <String>> result = new ArrayList <ArrayList<String>>();
 
     for (int i = 0; i < lines.size(); i ++) {
-      result.add(this.splitLine(lines.get(i)));
+      result.add(splitLine(lines.get(i)));
     }
 
     return result;
