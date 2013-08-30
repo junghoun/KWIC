@@ -19,7 +19,7 @@ public class MasterControl {
     // Start the UI
     cli.start();
 
-    // Pass to CircularShift to do shifting
+    // Pass to CircularShifter to do shifting
     CircularShifter circularShifts = new CircularShifter(lineStorage, input.getIgnoredWords());
 
     // Pass to AlphabeticalShift to do ordering
