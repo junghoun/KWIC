@@ -1,14 +1,10 @@
-/**
- * Created with IntelliJ IDEA.
- * User: ryandao
- * Date: 8/25/13
- * Time: 2:59 PM
- * To change this template use File | Settings | File Templates.
- */
-
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Simple Command Line Interface for the KWIC program.
+ *
+ */
 public class CLI {
   private ArrayList<InputListener> inputListeners;
 

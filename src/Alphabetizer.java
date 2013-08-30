@@ -3,11 +3,9 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 /**
- * Created with IntelliJ IDEA.
- * User: ryandao
- * Date: 8/25/13
- * Time: 3:00 PM
- * To change this template use File | Settings | File Templates.
+ * This class handles sorting the circular shifts and provides
+ * abstracted access to the sorted shifts.
+ *
  */
 public class Alphabetizer {
   private CircularShifter circularShifter;
@@ -18,10 +16,11 @@ public class Alphabetizer {
     this.orderedIndices = this.alphabetize(circularShifter.getFirstWords());
   }
 
-  public Integer[] getOrderedIndices() {
-    return orderedIndices;
-  }
-
+  /**
+   * Get the ordered shifts based on the sorted indices.
+   *
+   * @return ArrayList<ArrayList<String>> representation of the ordered shifts.
+   */
   public ArrayList<ArrayList<String>> getOrderedShifts() {
     ArrayList<ArrayList<String>> result = new ArrayList<ArrayList<String>>();
 

@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 
-
 public class MasterControl implements InputListener {
   private CLI cli;
   private ArrayList<String> wordsToIgnore;

@@ -1,4 +1,10 @@
-
+/**
+ * Interface for input listeners. The list of events includes:
+ *   * Line added
+ *   * Ignored word added
+ *   * Input finished
+ *
+ */
 public interface InputListener {
   public void handleLineAddedEvent(String line);
 

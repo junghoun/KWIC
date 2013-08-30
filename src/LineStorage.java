@@ -1,14 +1,10 @@
-/**
- * Created with IntelliJ IDEA.
- * User: ryandao
- * Date: 8/25/13
- * Time: 3:00 PM
- * To change this template use File | Settings | File Templates.
- */
-
 import java.util.ArrayList;
 import java.util.Arrays;
 
+/**
+ * This class abstracts the storage layer for line input.
+ *
+ */
 public class LineStorage {
   private ArrayList<String> lines;
   private ArrayList<ArrayList<String>> words;
